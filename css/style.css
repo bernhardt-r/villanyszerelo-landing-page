@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&family=Roboto:wght@300&display=swap');
+
+:root {
+  --primary-color: rgba(255, 153, 0, 1);
+  --secondary-color: rgba(77, 46, 0, 1);
+  --dark-color: rgba(26, 15, 0, 1);
+  --light-color: rgba(255, 244, 230);
+  --primary-font-color: rgba(49, 50, 67, 1);
+  --secondary-font-color: rgba(255, 255, 255, 1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+h1, h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+h4 {
+  font-weight: 300;
+  line-height: 1.2;
+  padding: 0 0 10px 0;
+}
+
+p {
+   margin: 10px 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 70px;
+}
+
+.navbar ul {
+  display: flex;
+  font-size: 16px;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 16px;
+  margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 2px #fff solid;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.navbar img {
+  height: 50px;
+  width: auto;
+  padding: 5px;
+}
+
+.navbar h1 {
+  font-size: 18px;
+}
+
+.navbar h1 span {
+  font-size: 14px;
+}
+
+/* Showcase */
+.showcase {
+  height: 500px;
+  background-color: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+
+.showcase h1 {
+  font-size: 2.5rem;
+}
+
+.showcase p {
+  margin: 20px 0;
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 55% 45%;
+  gap: 30px;
+}
+
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 100;
+  justify-self: flex-center;
+  animation: slideInFromRight 1s ease-in;
+  margin: 0 auto;
+}
+
+.showcase::before, .showcase::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* Services */
+.services {
+  padding-top: 140px;
+  animation: slideInFromBottom 1s ease-in;
+}
+
+.services-heading {
+  max-width: 500px;
+  margin: auto;
+}
+
+.services .grid h3 {
+  font-size: 35px;
+}
+
+.services .grid p {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Contact */
+.contact .grid {
+  grid-template-columns: 4fr 3fr;
+  overflow: visible;
+}
+
+.contact img {
+  position: relative;
+  bottom: -25px;
+  height: 200px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+.footer .social a {
+  margin: 0 10px;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* E-mail */
+.e-mail:before {
+  content: attr(data-website) "\0040" attr(data-user);
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+/* Tablets and under */
+@media(max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .services .grid,
+  .contact .grid,
+  .works .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+    height: auto;
+  }
+
+  .showcase-text {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .showcase-form {
+    justify-self: center;
+    margin: auto;
+    top: -60px;
+    margin-top: 30px;
+  }
+}
+
+/* Mobile */
+@media(max-width: 600px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    font-size: 14px;
+    padding: 10px;
+    background-color: rgba(26, 15, 0, 0.1);
+  }
+
+  .navbar a {
+    color: #fff;
+    padding: 12px;
+    margin: 0;
+  }
+
+  .showcase-form {
+    width: 300px;
+    margin-top: 60px;
+  }
+
+  .showcase h1 {
+    font-size: 1.5rem;
+  }
+
+  .md {
+    font-size: 1.5rem;
+  }
+}
