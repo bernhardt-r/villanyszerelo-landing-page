@@ -185,6 +185,61 @@ img {
   margin: 0 10px;
 }
 
+/* GDPR banner */
+
+.cookiealert {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 !important;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 0;
+  transform: translateY(100%);
+  transition: all 500ms ease-out;
+  color: #ecf0f1;
+  background: #212327;
+  padding: 15px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.cookiealert.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0%);
+  transition-delay: 1000ms;
+}
+
+.cookiealert a {
+  text-decoration: none;
+  color: white;
+}
+
+.cookiealert a:hover {
+  text-decoration: none;
+  color: #37c0fb;
+}
+
+.cookiealert .acceptcookies {
+  margin-left: 10px;
+  vertical-align: baseline;
+}
+
+.cookie-button {
+background: var(--primary-color);
+color: #fff;
+font-size: 0.8em;
+padding: 5px;
+line-height: normal;
+}
+
+.cookie-button:hover {
+  color: #333 !important;
+}
+
 /* Animations */
 @keyframes slideInFromLeft {
   0% {
